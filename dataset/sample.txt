@@ -1,0 +1,11 @@
+loremipsumBetter interactivity
+The use of asynchronous requests allows the client’s
+browser to be more interactive and to respond quickly to
+inputs.
+Easier navigation
+The use of AJAX can reduce connection to the server it
+only has to be requested once.
+Reduced bandwidth
+Using AJAX, a web application can request only the
+content that needs to be updated, hence this drastically
+reduces the usage of bandwidth and loading time
