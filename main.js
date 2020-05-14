@@ -4,7 +4,7 @@ const $$ = document.querySelectorAll.bind(document);
 
 //DOM manipulation
 //Adding data into html
-const display = (output, url) => {
+const display = (output, url, tech) => {
 	output = JSON.parse(JSON.stringify(output));
 	content = '';
 	if (typeof output == 'object') {
@@ -20,24 +20,28 @@ const display = (output, url) => {
 	$('#data').innerHTML = content;
 	$('.link').innerText = `Source : ${url}`;
 	$('.link').classList.remove('invisble');
+	$('#method').innerText = tech;
 };
 
 //text with xhr
 const displayText = () => {
+	tech = 'xhr';
 	url = 'dataset/sample.txt';
-	fetch(url).then((response) => response.text()).then((data) => display(data, url));
+	fetch(url).then((response) => response.text()).then((data) => display(data, url, tech));
 };
 
 //json with ajax
 const displayJson = () => {
+	tech = 'jQuery ajax';
 	url = 'dataset/sample.json';
-	fetch(url).then((response) => response.json()).then((json) => display(json, url));
+	fetch(url).then((response) => response.json()).then((json) => display(json, url, tech));
 };
 
 //url call with fetch API
 const displayUrl = () => {
+	tech = 'fetch API';
 	url = 'https://jsonplaceholder.typicode.com/todos/1';
-	fetch(url).then((response) => response.json()).then((json) => display(json, url));
+	fetch(url).then((response) => response.json()).then((json) => display(json, url, tech));
 };
 
 //UX
