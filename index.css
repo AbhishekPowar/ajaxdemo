@@ -1,0 +1,21 @@
+:root {
+	--header: #083836;
+	--body: #fbffa3;
+	--border: #366d42;
+	--head: #c6e872;
+}
+
+.mycard {
+	padding: 15px 0;
+	background: var(--head);
+	/* display: flex;
+	flex-direction: row; */
+}
+.title {
+	margin-left: 20px;
+	font-weight: bold;
+}
+.icon {
+	margin-right: 20px;
+	color: rgba(38, 78, 4, 0.993);
+}

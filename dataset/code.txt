@@ -1,0 +1,23 @@
+const displayText = () => {
+	url = 'dataset/sample.txt';
+	var req = new XMLHttpRequest();
+	req.open('GET', url, false);
+	req.send(null);
+	data = req.responseText;
+	display(data, url, tech);
+};
+---const displayJson = () => {
+	url = 'dataset/sample.json';
+	$.ajax({
+		url: url,
+		type: 'GET',
+		dataType: 'json', // added data type
+		success: function(data) {
+			display(data, url, tech);
+		}
+	});
+};
+---const displayUrl = () => {
+	url = 'https://jsonplaceholder.typicode.com/todos/1';
+	fetch(url).then((response) => response.json()).then((json) => display(json, url, tech));
+};
