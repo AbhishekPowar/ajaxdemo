@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <title>AJAX Demo</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,8 +27,10 @@
                 <button id="urlBtn" class="btns fadeout black-text">Url</button>
             </div>
             <div class="col s12 m12 l9" id="content">
-                <h4 class="headline">Using - <span id='method'></span></h4>
-                <div class="link invisible" ></div>
+                <div id="up" class="invisible">
+                    <h4 class="headline">Using - <span id='method'></span></h4>
+                    <div class="link" ></div>    
+                </div>
                 <div id="data" >
                     
                 </div>

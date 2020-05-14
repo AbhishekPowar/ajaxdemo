@@ -1,6 +1,6 @@
 //jquery like syntax
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
+// const document.querySelector = document.querySelector.bind(document);
+// const document.querySelectordocument.querySelector = document.querySelectorAll.bind(document);
 
 //DOM manipulation
 //Adding data into html
@@ -17,24 +17,37 @@ const display = (output, url, tech) => {
 		content = `<div class="stack">${output}</div>`;
 	}
 
-	$('#data').innerHTML = content;
-	$('.link').innerText = `Source : ${url}`;
-	$('.link').classList.remove('invisble');
-	$('#method').innerText = tech;
+	document.querySelector('#data').innerHTML = content;
+	document.querySelector('.link').innerText = `Source : ${url}`;
+	document.querySelector('#up').classList.remove('invisible');
+	document.querySelector('#method').innerText = tech;
 };
 
 //text with xhr
 const displayText = () => {
 	tech = 'xhr';
 	url = 'dataset/sample.txt';
-	fetch(url).then((response) => response.text()).then((data) => display(data, url, tech));
+	var req = new XMLHttpRequest();
+	req.open('GET', url, false);
+	req.send(null);
+	data = req.responseText;
+	display(data, url, tech);
+	// fetch(url).then((response) => response.text()).then((data) => display(data, url, tech));
 };
 
 //json with ajax
 const displayJson = () => {
 	tech = 'jQuery ajax';
 	url = 'dataset/sample.json';
-	fetch(url).then((response) => response.json()).then((json) => display(json, url, tech));
+	$.ajax({
+		url: url,
+		type: 'GET',
+		dataType: 'json', // added data type
+		success: function(data) {
+			display(data, url, tech);
+		}
+	});
+	// fetch(url).then((response) => response.json()).then((json) => display(json, url, tech));
 };
 
 //url call with fetch API
@@ -46,7 +59,7 @@ const displayUrl = () => {
 
 //UX
 function fade(btn) {
-	btns = $$('.btns');
+	btns = document.querySelector('.btns');
 
 	for (const butn of Array.from(btns)) {
 		butn.classList.remove('fadein');
@@ -56,9 +69,9 @@ function fade(btn) {
 	btn.classList.remove('fadeout');
 }
 
-textBtn = $('#textBtn');
-jsonBtn = $('#jsonBtn');
-urlBtn = $('#urlBtn');
+textBtn = document.querySelector('#textBtn');
+jsonBtn = document.querySelector('#jsonBtn');
+urlBtn = document.querySelector('#urlBtn');
 
 textBtn.addEventListener('click', (e) => {
 	displayText();
