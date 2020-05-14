@@ -59,7 +59,7 @@ const displayUrl = () => {
 
 //UX
 function fade(btn) {
-	btns = document.querySelector('.btns');
+	btns = document.querySelectorAll('.btns');
 
 	for (const butn of Array.from(btns)) {
 		butn.classList.remove('fadein');
