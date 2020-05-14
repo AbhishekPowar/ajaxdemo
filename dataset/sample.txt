@@ -1,4 +1,6 @@
-loremipsumBetter interactivity
+AJAX
+
+Better interactivity
 The use of asynchronous requests allows the client’s
 browser to be more interactive and to respond quickly to
 inputs.
