@@ -26,7 +26,12 @@ const main = (code) => {
 
 		document.querySelector('#data').innerHTML = content;
 		document.querySelector('.link').innerText = `Source : ${url}`;
-		document.querySelector('#up').classList.remove('invisible');
+		inv = document.querySelectorAll('.invisible');
+
+		Array.from(inv).map((obj) => {
+			obj.classList.remove('invisible');
+		});
+		// document.querySelector('#up').classList.remove('invisible');
 		document.querySelector('#method').innerText = tech;
 		text = code.split('---')[idx];
 		out = '';

@@ -106,10 +106,15 @@ body {
 	background: #dfe796;
 	box-sizing: border-box;
 	padding: 20px 20px;
+	padding-top: 0;
 }
 #code {
-	background: rgb(14, 13, 13);
-	color: white;
+	background: #c6e872;
+	color: black;
+	font-weight: bold;
 	padding: 2px;
-	border: 1px solid white;
+	border: 1px solid #c6e872;
+}
+#codebox h4 {
+	padding-left: 10px;
 }
