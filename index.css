@@ -19,3 +19,9 @@
 	margin-right: 20px;
 	color: rgba(38, 78, 4, 0.993);
 }
+.box {
+	margin-top: 30px;
+	background: #f2f887;
+	padding: 10px 20px;
+	border-radius: 20px;
+}
